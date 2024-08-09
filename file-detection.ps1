@@ -1,4 +1,6 @@
-# Search the computer for the file indicated on the command line.  If found it will place the output containing the full path it to a text file in your current directory.  If no file is found, it will display on the terminal that no file was found.
+# Search the computer for the file indicated on the command line.  
+# If found it will place the output containing the full path it to a text file in your current directory.  
+# If no file is found, it will display on the terminal that no file was found.
 # Created By: Dan Rearden
 # 2024-08-09
 
