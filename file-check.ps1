@@ -1,4 +1,4 @@
-# Gets list of files recursivly through a specified directory.  Then checks those files for a specific string.
+# Gets a list of files recursively through a specified directory.  Then, it checks those files for a specific string.
 # Created by Dan Rearden
 # 2024-08-12
 
@@ -10,9 +10,12 @@ param (
     [string]$string
 )
 
-# Getting list of files 
+# Getting list of files and place in a variable
 Get-ChildItem -path $path -File -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
-    # Getting the content of each file, then searching it using the variable string
-    Get-Content $_.FullName | Select-String -Pattern $string
-
+    # Getting the content of each file and checking to see if it contains the string
+    $foundString = Get-Content $_.FullName | Select-String -Pattern $string
+    # If the string is found it will Output it to the screen along with the full path
+    if ($foundString){    
+    Write-Output "$foundString - $($_.FullName)"
+}
 }
